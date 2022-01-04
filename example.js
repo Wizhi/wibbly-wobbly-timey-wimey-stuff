@@ -1,3 +1,18 @@
+// The Date object is, at it's core, just a Number representing the number of
+// milliseconds since the Unix Epoch (midnight of January 1, 1970, UTC).
+// This is known as "instantaneous time" and represents a given point in time,
+// independent of any calendar or time zone concepts.
+//
+// The Date object is completely unaware of calendars, time zones, and offsets.
+// Most methods on a Date object will utilize the local system time zone and
+// offset, thus converting between timeszones and offsets isn't exactly
+// possible using only the standard Date.
+//
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_ecmascript_epoch_and_timestamps
+// > Note: It's important to keep in mind that while the time value at the
+// > heart of a Date object is UTC, the basic methods to fetch the date and
+// > time or its components all work in the local (i.e. host system) time zone
+// > and offset.
 const from = new Date()
 const to = new Date()
 
