@@ -24,9 +24,20 @@ print(to)
 
 function print(date) {
 	console.table({
+		// Number of milliseconds since the Unix Epoch.
+		//
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime
+		// > getTime() always uses UTC for time representation. For example, a client
+		// > browser in one timezone, getTime() will be the same as a client browser
+		// > in any other timezone.
 		timestamp: date.getTime(),
-		   locale: date.toLocaleString(),
-		      utc: date.toUTCString(),
-		      iso: date.toISOString(),
+		// Culture specific representation, completely useless for all but display.
+		locale: date.toLocaleString(),
+		// RFC7231 representation, mostly useless except for display.
+		utc: date.toUTCString(),
+		// ISO 8601 representation, usefull for typical programmatic purposes.
+		// Most serialization libraries support this out of the box, or profiles
+		// hereof such as RFC3339.
+		iso: date.toISOString(),
 	})
 }
