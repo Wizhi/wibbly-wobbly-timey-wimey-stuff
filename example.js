@@ -8,7 +8,7 @@ const to = new Date()
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date#parameters
 // > The parameter values are all evaluated against the local time zone, rather than UTC.
 //
-// Example uses the range [2021-01-01T00:00:00Z / 2021-02-01T00:00:00Z]
+// Example uses the range [2021-01-01T00:00:00Z / 2021-02-01T00:00:00Z[
 from.setUTCFullYear(2021)
 from.setUTCDate(1)
 from.setUTCMonth(0)
@@ -17,7 +17,9 @@ from.setUTCHours(0, 0, 0, 0)
 to.setUTCFullYear(2021)
 to.setUTCDate(1)
 to.setUTCMonth(1)
-to.setUTCHours(0, 0, 0, 0)
+// This will actually affect the date, causing it to go back to just before
+// midnight the day before.
+to.setUTCHours(0, 0, 0, -1)
 
 print(from)
 print(to)
