@@ -18,7 +18,7 @@ to.setUTCFullYear(2021)
 to.setUTCDate(1)
 to.setUTCMonth(1)
 // This will actually affect the date, causing it to go back to just before
-// midnight the day before.
+// midnight the day before, effectively making this into an exclusive range.
 to.setUTCHours(0, 0, 0, -1)
 
 print(from)
